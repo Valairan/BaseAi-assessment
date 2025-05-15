@@ -14,14 +14,13 @@ export default function Login() {
 
   const navigate = useNavigate();
 
-  if (isAuthenticated) {
-    return <Navigate to="/dashboard" />;
-  }
+
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (email === VALID_EMAIL && password === VALID_PASSWORD) {
       localStorage.setItem('auth', 'true');
+      console.log("Potato")
       navigate('/dashboard');
     } else {
       setError('Invalid credentials');
