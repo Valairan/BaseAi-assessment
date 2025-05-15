@@ -1,5 +1,11 @@
 [
   { "id": 1, "name": "Alice", "status": "active" },
-  { "id": 2, "name": "Bob", "status": "inactive" },
-  { "id": 3, "name": "Charlie", "status": "active" }
+  { "id": 2, "name": "Charlie", "status": "active" },
+  { "id": 3, "name": "Echo", "status": "inactive" },
+  { "id": 4, "name": "Golf", "status": "active" },
+  { "id": 5, "name": "Delta", "status": "active" },
+  { "id": 6, "name": "Foxtrot", "status": "active" },
+  { "id": 7, "name": "Bravo", "status": "inactive" },
+  { "id": 8, "name": "Hotel", "status": "inactive" },
+  { "id": 9, "name": "India", "status": "active" }
 ]

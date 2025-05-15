@@ -1,24 +1,40 @@
 import React from 'react';
+import styles from './Table.module.css';
 
-type Props = {
-  data: { id: number; name: string; status: string }[];
-};
+interface TableProps {
+  data: {
+    id: number;
+    name: string;
+    status: string;
+    [key: string]: any; // in case there are other columns
+  }[];
+}
 
-const Table = ({ data }: Props) => {
+export default function Table({ data }: TableProps) {
+  if (!data.length) {
+    return <p>No data available</p>;
+  }
+
   return (
-    <table>
+    <table className={styles.table}>
       <thead>
-        <tr><th>ID</th><th>Name</th><th>Status</th></tr>
+        <tr className={styles.tr}>
+          <th className={styles.th}>ID</th>
+          <th className={styles.th}>Name</th>
+          <th className={styles.th}>Status</th>
+          {/* Add other headers as needed */}
+        </tr>
       </thead>
       <tbody>
-        {data.map((row) => (
-          <tr key={row.id}>
-            <td>{row.id}</td><td>{row.name}</td><td>{row.status}</td>
+        {data.map((item) => (
+          <tr key={item.id} className={styles.tr}>
+            <td className={styles.td}>{item.id}</td>
+            <td className={styles.td}>{item.name}</td>
+            <td className={styles.td}>{item.status}</td>
+            {/* Add other cells as needed */}
           </tr>
         ))}
       </tbody>
     </table>
   );
-};
-
-export default Table;
+}
